@@ -10,30 +10,20 @@ variable "aws_region" {
 
 variable "aws_environment" {
   description = "AWS environment name"
-  default     = "bamboo"
+  default     = "main"
 }
 
-variable "aws_ami_bamboo_server" {
-  description = "AWS AMI for bamboo server"
+variable "aws_ami_ec2" {
+  description = "AWS AMI for EC2 instance"
   default     = "ami-cb126d21"
 }
 
-variable "aws_ami_bamboo_agent" {
-  description = "AWS AMI for bamboo agent"
-  default     = "ami-3dd5d641"
-}
-
-variable "aws_ami_windows_small" {
-  description = "AWS AMI instance small"
+variable "aws_ami_type" {
+  description = "AWS AMI instance type"
   default     = "t2.small"
 }
 
-variable "aws_ami_windows_medium" {
-  description = "AWS AMI instance medium"
-  default     = "t2.medium"
-}
-
-variable "aws_windows_key_name" {
-  description = "Key name"
+variable "aws_key_name" {
+  description = "Instance key pair name"
   default     = "key-singapore-ap-southeast-1a"
 }

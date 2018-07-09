@@ -1,5 +1,5 @@
 resource "aws_route_table" "public_route" {
-  vpc_id = "${aws_vpc.bamboovpc.id}"
+  vpc_id = "${aws_vpc.mainvpc.id}"
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -7,11 +7,11 @@ resource "aws_route_table" "public_route" {
   }
 
   tags {
-    Name = "${aws_vpc.bamboovpc.tags.Name}-route"
+    Name = "${aws_vpc.mainvpc.tags.Name}-route"
   }
 }
 
-resource "aws_route_table_association" "bamboo-route-association" {
+resource "aws_route_table_association" "route-association" {
   subnet_id      = "${aws_subnet.public_subnet.id}"
   route_table_id = "${aws_route_table.public_route.id}"
 }
