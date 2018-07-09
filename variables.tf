@@ -5,7 +5,6 @@ variable "aws_profile" {
 
 variable "aws_region" {
   description = "AWS region"
-  default     = "ap-southeast-1"
 }
 
 variable "aws_environment" {
