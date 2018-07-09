@@ -1,5 +1,5 @@
 provider "aws" {
-  shared_credentials_file = "C:/AWS/study/credentials"
+  shared_credentials_file = "${var.shared_credentials_file}"
   profile                 = "${var.aws_profile}"
   region                  = "${var.aws_region}"
 }

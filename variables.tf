@@ -26,3 +26,8 @@ variable "aws_key_name" {
   description = "Instance key pair name"
   default     = "key-singapore-ap-southeast-1a"
 }
+
+variable "shared_credentials_file" {
+  description = "AWS credential file location"
+  default     = "C:/AWS/study/credentials"
+}
