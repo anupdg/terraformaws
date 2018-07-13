@@ -10,10 +10,6 @@ variable "aws_environment" {
   description = "AWS environment name"
 }
 
-variable "aws_ami_ec2" {
-  description = "AWS AMI for EC2 instance"
-}
-
 variable "aws_key_name" {
   description = "Instance key pair name"
 }
