@@ -1,5 +1,5 @@
 module "main" {
-  source                  = "git::https://github.com/asteranup/terraformaws.git" #"../"
+  source                  = "../"                      #"git::https://github.com/asteranup/terraformaws.git"
   aws_profile             = "StudyProfile"
   aws_region              = "ap-south-1"
   aws_environment         = "testenv"
