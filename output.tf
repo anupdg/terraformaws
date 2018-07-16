@@ -17,3 +17,8 @@ output "public_security_group_id" {
   description = "public security group id"
   value       = "${aws_security_group.public_sg.id}"
 }
+
+output "vpc_id" {
+  description = "Generated VPC id"
+  value       = "${aws_vpc.mainvpc.id}"
+}

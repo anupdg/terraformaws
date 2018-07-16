@@ -17,3 +17,8 @@ output "public_security_group_id" {
   description = "public security group id"
   value       = "${module.main.public_security_group_id}"
 }
+
+output "vpc_id" {
+  description = "VPC id"
+  value       = "${module.main.vpc_id}"
+}
