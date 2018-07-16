@@ -6,9 +6,10 @@ resource "aws_route_table" "public_route" {
     gateway_id = "${aws_internet_gateway.ig.id}"
   }
 
-  tags {
-    Name = "${aws_vpc.mainvpc.tags.Name}-route"
-  }
+  tags = "${merge(
+    map("Name", "${aws_vpc.mainvpc.tags.Name}-route"),
+    var.base_tags
+  )}"
 }
 
 resource "aws_route_table_association" "route-association" {

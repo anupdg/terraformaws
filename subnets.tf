@@ -6,9 +6,10 @@ resource "aws_subnet" "public_subnet" {
   availability_zone       = "${data.aws_availability_zones.available.names[0]}"
   cidr_block              = "10.0.3.0/24"
 
-  tags = {
-    Name = "${var.aws_environment}-sn-public-10.0.3.0"
-  }
+  tags = "${merge(
+    map("Name", "${var.aws_environment}-sn-public-10.0.3.0"),
+    var.base_tags
+  )}"
 }
 
 resource "aws_subnet" "private_subnet" {
@@ -16,7 +17,8 @@ resource "aws_subnet" "private_subnet" {
   availability_zone = "${data.aws_availability_zones.available.names[1]}"
   cidr_block        = "10.0.4.0/24"
 
-  tags = {
-    Name = "${var.aws_environment}-sn-private-10.0.4.0"
-  }
+  tags = "${merge(
+    map("Name", "${var.aws_environment}-sn-private-10.0.4.0"),
+    var.base_tags
+  )}"
 }

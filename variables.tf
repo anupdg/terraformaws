@@ -17,3 +17,13 @@ variable "aws_key_name" {
 variable "shared_credentials_file" {
   description = "AWS credential file location"
 }
+
+variable "base_tags" {
+  description = "Tag for all resources."
+  type        = "map"
+
+  default = {
+    "common.environment" = "dev"
+    "terraform"          = "true"
+  }
+}

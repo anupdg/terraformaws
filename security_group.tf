@@ -4,9 +4,10 @@ resource "aws_security_group" "public_sg" {
   description = "Public security group"
   vpc_id      = "${aws_vpc.mainvpc.id}"
 
-  tags = {
-    "Name" = "${var.aws_environment}-public-sg"
-  }
+  tags = "${merge(
+    map("Name", "${var.aws_environment}-public-sg"),
+    var.base_tags
+  )}"
 }
 
 resource "aws_security_group_rule" "public_rdp_access" {
@@ -44,9 +45,10 @@ resource "aws_security_group" "private_sg" {
   description = "Private security group"
   vpc_id      = "${aws_vpc.mainvpc.id}"
 
-  tags = {
-    "Name" = "${var.aws_environment}-private-sg"
-  }
+  tags = "${merge(
+    map("Name", "${var.aws_environment}-private-sg"),
+    var.base_tags
+  )}"
 }
 
 resource "aws_security_group_rule" "private_all" {
